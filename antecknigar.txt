@@ -1,0 +1,20 @@
+Introduktion till Elm
+nForum
+
+# Vad är Elm?
+
+http://elm-lang.org/
+
+Elms tag-line:
+A delightful language for reliable webapps.
+Generate JavaScript with great performance and no runtime exceptions.
+
+
+Elm består av ett språk en kompilator och en runtime. Kompilatorn tar Elm-kod och producerar javascript. Runtime driver applikationen i browsern och gör anrop in i våran applikation.
+Sen finns det stödjande system som pakethanterare, REPL, formattering, editor-stöd, online-körning (ellie).
+
+
+# TEA
+
+En interaktiv applikation skriven i Elm består av en modell, en vyfunktion och en uppdateringsfunktion. (En icke interaktiv räcker med vy).
+Med andra ord så följer Elm design-mönstret MVC (Model, View, Controller).
