@@ -1,6 +1,6 @@
 import Html exposing (Html, input, div, text)
 import Html.Events exposing (onInput)
-import Html.Attributes exposing (style)
+import Html.Attributes exposing (style, value)
 import Regex
 
 main =
@@ -29,5 +29,5 @@ view model =
   in
     div []
       [ div [] [ text "E-mail" ]
-      , input [emailInputStyle, onInput EmailTyping] [ ]
+      , input [emailInputStyle, onInput EmailTyping, value model] [ ]
       ]

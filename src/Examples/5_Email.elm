@@ -1,4 +1,4 @@
-import Html exposing (Html, input, div, text, button)
+import Html exposing (Html, input, div, text, button, ul, li)
 import Html.Events exposing (onInput, onClick)
 import Html.Attributes exposing (disabled, value)
 import Regex
@@ -34,6 +34,10 @@ isEmail email = Regex.contains emailRegex email
 
 enabled = not >> disabled
 
+viewEmail email = li [] [text email]
+
+viewEmails emails = ul [] <| List.map viewEmail emails
+
 view model =
   let
     addButtonStatus = model.editedEmail |> isEmail |> enabled
@@ -42,4 +46,5 @@ view model =
       [ div [] [ text "E-mail" ]
       , input [onInput EmailTyping, value model.editedEmail] [ ]
       , button [addButtonStatus, onClick Add] [text "Add"]
+      , viewEmails model.addedEmails
       ]
