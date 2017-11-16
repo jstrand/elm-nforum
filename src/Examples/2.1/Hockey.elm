@@ -48,14 +48,11 @@ viewGame game = li [] [text <| toString game]
 viewGames games = ul [] <| List.map viewGame games
 
 view model =
-  let
-    addButtonStatus = disabled False
-  in
-    div []
-      [ div [] [ text "Winner" ]
-      , input [onInput TypeWinner, value model.winner] [ ]
-      , div [] [ text "Loser" ]
-      , input [onInput TypeLoser, value model.loser] [ ]
-      , button [addButtonStatus, onClick Add] [text "Add"]
-      , viewGames model.games
-      ]
+  div []
+    [ div [] [ text "Winner" ]
+    , input [onInput TypeWinner, value model.winner] [ ]
+    , div [] [ text "Loser" ]
+    , input [onInput TypeLoser, value model.loser] [ ]
+    , button [onClick Add] [text "Add"]
+    , viewGames model.games
+    ]
