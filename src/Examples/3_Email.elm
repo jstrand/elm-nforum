@@ -1,6 +1,6 @@
-import Html exposing (Html, input, div, text)
+import Html exposing (Html, input, div, text, button)
 import Html.Events exposing (onInput)
-import Html.Attributes exposing (style)
+import Html.Attributes exposing (disabled)
 import Regex
 
 main =
@@ -17,17 +17,15 @@ emailRegex = Regex.regex ".+\\@.+\\..{2,4}"
 
 isEmail email = Regex.contains emailRegex email
 
-inputStyle valid =
-  if valid then
-    style [("background", "green")]
-  else
-    style []
+-- enabled valid = disabled (not valid)
+enabled = not >> disabled
 
 view model =
-  let   
-    emailInputStyle = inputStyle (isEmail model)
+  let
+    addButtonStatus = model |> isEmail |> enabled
   in
     div []
       [ div [] [ text "E-mail" ]
-      , input [emailInputStyle, onInput EmailTyping] [ ]
+      , input [onInput EmailTyping] [ ]
+      , button [addButtonStatus] [text "Add"]
       ]
