@@ -10,10 +10,11 @@ aWinsOverB =
     }
 
 games =
-    [ ("empty", aWinsOverB, [], ["a", "b"])
-    , ("switch", aWinsOverB, ["b", "a"], ["a", "b"])
-    , ("last", aWinsOverB, ["c", "a"], ["c", "a", "b"])
-    , ("switchBottom", aWinsOverB, ["c", "b", "a"], ["c", "a", "b"])
+    [ ("Neither on list", aWinsOverB, [], ["a", "b"])
+    , ("Winner before loser", aWinsOverB, ["c", "a", "d", "b"], ["c", "a", "d", "b"])
+    , ("Loser before winner", aWinsOverB, ["b", "a"], ["a", "b"])
+    , ("Only winner on ladder", aWinsOverB, ["c", "a", "d"], ["c", "a", "d", "b"])
+    , ("Only loser on ladder", aWinsOverB, ["c", "b"], ["c", "a", "b"])
     ]
 
 testOne (name, game, initial, expected) =
