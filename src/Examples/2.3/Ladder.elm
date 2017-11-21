@@ -11,15 +11,15 @@ type alias Game =
 
 type alias Ladder = List Player
 
-insertAt : Player -> Int -> Ladder -> Ladder
-insertAt elem index ladder =
+moveUp : Player -> Int -> Ladder -> Ladder
+moveUp winner moveTo ladder =
     let
-        (before, after) = splitAt index ladder
+        (before, after) = splitAt moveTo ladder
     in
-        before ++ elem :: after
+        before ++ [winner] ++ (remove winner after)
         
-addGame : Ladder -> Game -> Ladder
-addGame ladder {winner, loser} =
+addGame : Game -> Ladder -> Ladder
+addGame {winner, loser} ladder =
     let
         maybeWinner = elemIndex winner ladder
         maybeLoser = elemIndex loser ladder
