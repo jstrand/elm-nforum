@@ -6,12 +6,13 @@ slides =
     [ title
     , what_is
     , pitch
+    , app_structure
     ]
 
 
 title = """
 
-# Introduktion till Elm
+# Introduction to Elm
 nForum 2017-11-23
 
 """

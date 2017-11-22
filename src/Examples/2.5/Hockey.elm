@@ -40,7 +40,7 @@ update msg model =
 
 viewGame game = li [] [text <| toString game]
 
-viewGames games = ul [] <| List.map viewGame games
+viewGames = ul [] << List.map viewGame
 
 viewPlayer player = li [] [text player]
 viewLadder ladder = ul [] <| List.map viewPlayer ladder
@@ -54,5 +54,5 @@ view model =
     , button [onClick Add] [text "Add"]
     , viewGames model.games
     , h2 [] [text "Bordshockeystege"]
-    , viewLadder (createLadder model.games)
+    , viewLadder <| createLadder model.games
     ]
