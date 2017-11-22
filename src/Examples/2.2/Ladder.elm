@@ -10,4 +10,4 @@ type alias Game =
 type alias Ladder = List Player
 
 addGame : Ladder -> Game -> Ladder
-addGame before game = before
+addGame ladder game = ladder

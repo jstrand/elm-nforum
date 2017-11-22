@@ -1,12 +1,11 @@
 import Presentation exposing (..)
-import Formatting exposing (..)
 
 main = markdownSlidesViewer slides "ws://localhost:9000"
 
 slides =
     [ title
     , what_is
-    , horses_mouth
+    , pitch
     ]
 
 
@@ -18,10 +17,10 @@ nForum 2017-11-23
 """
 
 what_is = """ 
-# Vad är Elm?
+# What is Elm?
 
-A delightful language for reliable webapps.
-Generate JavaScript with great performance and no runtime exceptions.
+> A delightful language for reliable webapps.
+> Generate JavaScript with great performance and no runtime exceptions.
 
 http://elm-lang.org/
 
@@ -32,22 +31,22 @@ http://elm-lang.org/
 -- Sen finns det stödjande system som pakethanterare, REPL, formattering, editor-stöd, online-körning (ellie).
 
 
-horses_mouth = """
+pitch = """
 
-# Ur hästens mun
+# Pitch
 
 > * No runtime errors in practice. No null. No undefined is not a function.
 > * Friendly error messages that help you add features more quickly.
 > * Well-architected code that stays well-architected as your app grows.
 > * Automatically enforced semantic versioning for all Elm packages.
 
-https://guide.elm-lang.org/
+Copied from: https://guide.elm-lang.org/
 
 """
 
 app_structure = """
 
-# Programstruktur
+# Program structure
 
 * model
 * view
@@ -57,30 +56,4 @@ app_structure = """
 """
 -- En interaktiv applikation skriven i Elm består av en modell, en vyfunktion och en uppdateringsfunktion. (En icke interaktiv räcker med vy).
 -- Med andra ord så följer Elm design-mönstret MVC (Model, View, Controller).
-
-
-hello_email = """
-
-```
-import Html exposing (Html, input, div, text)
-import Html.Events exposing (onInput)
-
-main =
-  Html.beginnerProgram { model = "", view = view, update = update }
-
-type Msg = EmailTyping String
-
-update msg model =
-  case msg of
-    EmailTyping text ->
-        text
-
-view model =
-  div []
-    [ div [] [ text "E-mail" ]
-    , input [ onInput EmailTyping ] [ ]
-    , div [] [ text model ]
-    ]
-```
-
-"""
+-- Relatera även till React + Redux

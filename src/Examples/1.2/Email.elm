@@ -19,7 +19,7 @@ isEmail email = Regex.contains emailRegex email
 
 inputStyle valid =
   if valid then
-    style [("background", "green")]
+    style [("background", "#346524")]
   else
     style []
 

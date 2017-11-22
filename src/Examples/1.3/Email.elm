@@ -17,8 +17,9 @@ emailRegex = Regex.regex ".+\\@.+\\..{2,4}"
 
 isEmail email = Regex.contains emailRegex email
 
--- enabled valid = disabled (not valid)
-enabled = not >> disabled
+enabled : Bool -> Html.Attribute Msg
+enabled valid = disabled (not valid)
+-- enabled = not >> disabled
 
 view model =
   let
