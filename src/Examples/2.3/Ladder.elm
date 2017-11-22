@@ -59,11 +59,11 @@ addGame {winner, loser} ladder =
             --     ladder ++ [loser]
 
             -- (Nothing, Just loserIndex) ->
-            --     insertAt winner loserIndex ladder
+            --     moveUp winner loserIndex ladder
             
             -- (Just winnerIndex, Just loserIndex) ->
             --     if loserIndex < winnerIndex then
-            --         insertAt loser winnerIndex (remove loser ladder)
+            --         moveUp loser winnerIndex ladder
             --     else
             --         ladder
 
