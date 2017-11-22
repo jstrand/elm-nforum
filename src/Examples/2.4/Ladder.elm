@@ -16,7 +16,7 @@ moveUp winner moveTo ladder =
     let
         (before, after) = splitAt moveTo ladder
     in
-        before ++ [winner] ++ remove winner after
+        before ++ winner :: remove winner after
 
 addGame : Game -> Ladder -> Ladder
 addGame {winner, loser} ladder =
@@ -41,7 +41,7 @@ addGame {winner, loser} ladder =
                     ladder
 
 createLadder : List Game -> Ladder
-createLadder game = []
+createLadder games = []
 
 
 
