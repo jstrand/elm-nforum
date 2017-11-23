@@ -1,1 +1,1 @@
-@elm-live --port=8001 Hockey.elm --output=Hockey.js
+@elm-live --port=2100 Hockey.elm --output=Hockey.js --open
